@@ -1,13 +1,11 @@
-import sys
 from random import randint
-from sys import argv
-answer = randint(1,10)
-
-
+import sys
+answer = randint(int(sys.argv[1]), int(sys.argv[2]))
+interaction = int(sys.argv[1]), int(sys.argv[2])
 
 while True:
     try:
-        guess = int(input("please guess a number between 1 and 10: "))
+        guess = int(input(f"please guess a number between {interaction}: "))
         if 0 < guess < 11:
             print(answer)
             if guess == answer:
@@ -18,8 +16,6 @@ while True:
     except ValueError:
         print("Please use a number")
         continue
-sys.argv[0]
-sys.argv[1]
 #generate a number  1~10
 # input from the user
 # check that input is a number 1~10
